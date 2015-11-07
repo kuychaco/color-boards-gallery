@@ -1,0 +1,19 @@
+.cell {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+.board {
+  float: left;
+  margin: 1em;
+}
+
+button {
+  margin: .5em;
+}
+
+.row {
+  height: 100px;
+}
