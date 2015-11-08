@@ -7,6 +7,7 @@ var assign = require('object-assign');
 var ActionTypes = Constants.ActionTypes;
 var CHANGE_EVENT = 'change';
 
+
 var _boards = {};
 
 function _loadBoards (boards) {
@@ -91,6 +92,8 @@ var BoardStore = assign({}, EventEmitter.prototype, {
 
 });
 
+BoardStore.setMaxListeners(1000);
+
 BoardStore.dispatchToken = Dispatcher.register(function(action) {
 
   switch (action.type) {
@@ -102,7 +105,6 @@ BoardStore.dispatchToken = Dispatcher.register(function(action) {
 
     case ActionTypes.RECEIVE_RAW_BOARDS:
       _loadBoards(action.rawBoards);
-      console.log('BOARDS', _boards);
       BoardStore.emitChange();
       break;
 
