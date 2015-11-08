@@ -18,6 +18,7 @@ module.exports = {
       success: function(result) {
         result.set('board', board);
         result.save();
+        alert("Board updated");
       },
       error: function (error) {
         alert("Error: " + error.code + " " + error.message);
