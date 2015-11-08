@@ -1,10 +1,9 @@
 var Board = require('./Board.react');
-var NewBoard = require('./NewBoard.react');
+var NewBoardForm = require('./NewBoardForm.react');
 var BoardStore = require('../stores/BoardStore');
 var React = require('react');
 
 function getStateFromStores() {
-  console.log('getAllBoardIds');
   return {
     boardIds: BoardStore.getAllBoardIds()
   };
@@ -34,7 +33,7 @@ var App = React.createClass({
     });
     return (
       <div className="app">
-        <NewBoard />
+        <NewBoardForm />
         {boards}
       </div>
     );

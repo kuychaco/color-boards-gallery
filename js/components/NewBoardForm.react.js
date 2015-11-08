@@ -4,7 +4,7 @@ var BoardActionCreators = require('../actions/BoardActionCreators');
 var React = require('react');
 
 
-var NewBoard = React.createClass({
+var NewBoardForm = React.createClass({
 
   render: function() {
     return (
@@ -29,4 +29,4 @@ var NewBoard = React.createClass({
 
 });
 
-module.exports = NewBoard;
+module.exports = NewBoardForm;
