@@ -6,6 +6,7 @@ Completed:
 - Toggle color when clicked
 - Clear board
 - Save to Parse backend
+- Delete board
 - Display gallery of all boards which are viewable and editable by any user
 
 ## Development
