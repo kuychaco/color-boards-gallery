@@ -35,6 +35,13 @@ module.exports = {
     });
   },
 
+  deleteBoard: function(boardId) {
+    Dispatcher.dispatch({
+      type: ActionTypes.DELETE_BOARD,
+      boardId: boardId
+    });
+  },
+
   createBoard: function(height, width) {
     Dispatcher.dispatch({
       type: ActionTypes.CREATE_BOARD,

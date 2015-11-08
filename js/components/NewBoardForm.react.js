@@ -9,7 +9,7 @@ var NewBoardForm = React.createClass({
   render: function() {
     return (
       <form className="boardForm" onSubmit={this._onSubmit}>
-        <h4>Create New Board</h4>
+        <h4>Create New Board:</h4>
         <input type="text" placeholder="height" ref="height" />
         <input type="text" placeholder="width" ref="width" />
         <input type="submit" />

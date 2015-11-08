@@ -7,6 +7,7 @@ module.exports = {
     CLEAR_BOARD: null,
     CREATE_BOARD: null,
     SAVE_BOARD: null,
+    DELETE_BOARD: null,
     RECEIVE_RAW_BOARDS: null
   })
 

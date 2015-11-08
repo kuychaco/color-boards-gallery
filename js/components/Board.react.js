@@ -39,7 +39,8 @@ var Board = React.createClass({
       <div className="board">
         <span>Board ID: {this.props.boardId}</span>
         <button onClick={this._onClear.bind(null, this.props.boardId)}>Clear</button>
-        <button onClick={this._onSave.bind(null, this.props.boardId)}>Save</button> <br/>
+        <button onClick={this._onSave.bind(null, this.props.boardId)}>Save</button> 
+        <button onClick={this._onDelete.bind(null, this.props.boardId)}>Delete</button> <br/>
         <span>{this.state.updatedAt.toString()} </span>
         {rows}
       </div>
@@ -53,6 +54,10 @@ var Board = React.createClass({
   _onSave: function(boardId) {
     if (boardId === '-unsaved') BoardStore.removeChangeListener(this._onChange);
     BoardActionCreators.saveBoard(boardId);
+  },
+
+  _onDelete: function(boardId) {
+    BoardActionCreators.deleteBoard(boardId);
   },
 
   _onChange: function() {

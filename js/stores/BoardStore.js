@@ -123,6 +123,11 @@ BoardStore.dispatchToken = Dispatcher.register(function(action) {
       WebAPIUtils.saveBoard(boardId, _boards[boardId].board);
       break;
 
+    case ActionTypes.DELETE_BOARD:
+      var boardId = action.boardId;
+      WebAPIUtils.deleteBoard(boardId);
+      break;
+
     default:
     // do nothing
   }
