@@ -47,8 +47,7 @@ var Row = React.createClass({
   },
 
   _onChange: function() {
-    console.log('Row _onChange')
-    this.setState(getStateFromStores(this.props.boardId, this.props.rowIndex));
+    this.isMounted() && this.setState(getStateFromStores(this.props.boardId, this.props.rowIndex));
   }
 
 });

@@ -35,7 +35,6 @@ var Board = React.createClass({
         />
       );
     }
-    console.log('$$$$', this.state.updatedAt)
     return (
       <div className="board">
         <span>Board ID: {this.props.boardId}</span>
@@ -52,11 +51,12 @@ var Board = React.createClass({
   },
 
   _onSave: function(boardId) {
+    if (boardId === '-unsaved') BoardStore.removeChangeListener(this._onChange);
     BoardActionCreators.saveBoard(boardId);
   },
 
   _onChange: function() {
-    this.setState(getStateFromStores(this.props.boardId));
+    this.isMounted() && this.setState(getStateFromStores(this.props.boardId));
   }
 
 });
