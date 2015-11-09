@@ -1,4 +1,3 @@
-var Board = require('./Board.react');
 var BoardStore = require('../stores/BoardStore');
 var BoardActionCreators = require('../actions/BoardActionCreators');
 var React = require('react');
