@@ -1,7 +1,6 @@
 var BoardActionCreators = require('../actions/BoardActionCreators');
 
 var BoardObject = Parse.Object.extend("BoardObject");
-var query = new Parse.Query(BoardObject);
 
 module.exports = {
 
@@ -13,33 +12,29 @@ module.exports = {
         alert("Board saved with id " + object.id);
       });
       this.getAllBoards();
-      return;
+    } else {
+      query.equalTo('objectId', boardId);
+      query.first({
+        success: function(result) {
+          result.set('board', board);
+          result.save();
+          alert("Board updated");
+        },
+        error: alertError
+      });
     }
-    query.equalTo('objectId', boardId);
-    query.first({
-      success: function(result) {
-        result.set('board', board);
-        result.save();
-        alert("Board updated");
-      },
-      error: function (error) {
-        alert("Error: " + error.code + " " + error.message);
-      }
-    });
   },
 
   deleteBoard(boardId) {
-    var query = new Parse.Query(BoardObject);
     var _this = this;
+    var query = new Parse.Query(BoardObject);
     query.get(boardId, {
       success: function(board) {
         board.destroy({}).then(function() {
           _this.getAllBoards();
         });
       },
-      error: function (error) {
-        alert("Error: " + error.code + " " + error.message);
-      }
+      error: alertError
     });
   },
 
@@ -51,13 +46,15 @@ module.exports = {
           return {
             id: result.id,
             board: result.attributes
-          }
+          };
         });
         BoardActionCreators.receiveAllBoards(boards);
       },
-      error: function (error) {
-        alert("Error: " + error.code + " " + error.message);
-      }
+      error: alertError
     });
   }
+}
+
+function alertError (error) {
+  alert("Error: " + error.code + " " + error.message);
 }
