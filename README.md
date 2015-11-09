@@ -1,6 +1,10 @@
 ## Challenge
 Create a board of n x m tiles on a web page. Each tile on the board will start as white, but when clicked will toggle between a generated random color and returning to white. Each time a tile is toggled to a random color it should generate a new random color value.
 
+## Deployed App
+[http://kuychaco.github.io/color-boards-gallery/](http://kuychaco.github.io/color-boards-gallery/)
+![screenshot](https://cloud.githubusercontent.com/assets/7910250/11043991/30a4ce9c-86d4-11e5-89a2-2691711fd39b.gif)
+
 ## Features
 Completed:
 - Toggle color when clicked
