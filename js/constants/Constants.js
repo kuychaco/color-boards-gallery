@@ -9,6 +9,6 @@ module.exports = {
     SAVE_BOARD: null,
     DELETE_BOARD: null,
     RECEIVE_RAW_BOARDS: null
-  });
+  })
 
 };
